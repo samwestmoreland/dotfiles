@@ -658,11 +658,12 @@ require('lazy').setup({
         -- java = { 'google-java-format' },
         -- gradle = { 'npm-groovy-lint' },
         cucumber = { 'reformat-gherkin' },
-        yaml = { 'prettierd' },
+        -- yaml = { 'prettierd' },
         javascript = { 'prettierd' },
         typescript = { 'prettierd' },
         typescriptreact = { 'prettierd' }, -- for .tsx files
         gradle = { 'gradle-language-server' },
+        terraform = { 'terraform fmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
