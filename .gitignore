@@ -1,0 +1,7 @@
+# Never commit real secrets — only the .example template is tracked.
+.zsh_secrets
+zsh/.zsh_secrets
+*.pre-symlink
+
+# opencode local junk (already ignored in the source config dir)
+node_modules
