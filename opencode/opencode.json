@@ -1,0 +1,311 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "theme": "opencode",
+  "experimental": {
+    "disable_paste_summary": true
+  },
+  "plugin": [
+    "opencode-notify",
+    "@cortexkit/opencode-magic-context@0.41.4",
+    "opencode-mermaid-renderer@0.0.1"
+  ],
+  "permission": {
+    "bash": {
+      "*": "ask",
+      "cat *": "allow",
+      "cd *": "allow",
+      "echo *": "allow",
+      "find *": "allow",
+      "gh issue list *": "allow",
+      "gh issue view *": "allow",
+      "gh pr list *": "allow",
+      "gh pr view *": "allow",
+      "gh repo view *": "allow",
+      "gh run view *": "allow",
+      "gh search issues *": "allow",
+      "gh search repos *": "allow",
+      "git branch --show-current*": "allow",
+      "git checkout *": "allow",
+      "git commit -m *": "allow",
+      "git diff *": "allow",
+      "git fetch *": "allow",
+      "git log *": "allow",
+      "git pull --ff-only *": "allow",
+      "git rev-list *": "allow",
+      "git stash apply *": "allow",
+      "git stash list *": "allow",
+      "git stash pop *": "allow",
+      "git status *": "allow",
+      "grep *": "allow",
+      "head *": "allow",
+      "jira issue list *": "allow",
+      "jira issue view *": "allow",
+      "ls *": "allow",
+      "npx -y gh-axi issue list *": "allow",
+      "npx -y gh-axi issue view *": "allow",
+      "npx -y gh-axi pr checks": "allow",
+      "npx -y gh-axi pr diff *": "allow",
+      "npx -y gh-axi pr list *": "allow",
+      "npx -y gh-axi pr view *": "allow",
+      "npx -y gh-axi release list *": "allow",
+      "npx -y gh-axi release view *": "allow",
+      "npx -y gh-axi search *": "allow",
+      "pwd *": "allow",
+      "sort *": "allow",
+      "tail *": "allow",
+      "terraform init *": "allow",
+      "terraform state list *": "allow",
+      "terraform validate *": "allow",
+      "wc -l *": "allow",
+      "xargs grep *": "allow",
+      "rg *": "allow",
+      "git push *": "ask",
+      "find * -delete*": "ask",
+      "find * -exec*": "ask",
+      "cat *.env*": "deny",
+      "grep *.env*": "deny",
+      "rg *.env*": "deny",
+      "head *.env*": "deny",
+      "tail *.env*": "deny"
+    },
+    "edit": "ask",
+    "write": "ask",
+    "external_directory": {
+      "*": "ask",
+      "~/repos/**": "allow"
+    },
+    "read": "allow",
+    "grep": "allow",
+    "glob": "allow",
+    "list": "allow",
+    "lsp": "allow",
+    "patch": "allow",
+    "skill": "allow",
+    "todowrite": "allow",
+    "todoread": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "question": "allow",
+    "datadog*": "deny",
+    "glean*": "deny",
+    "context7*": "deny",
+    "grep_app*": "deny"
+  },
+  "provider": {
+    "litellm": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "HAIP",
+      "options": {
+        "baseURL": "{env:LLM_API_BASE_URL}",
+        "apiKey": "{env:LLM_API_KEY}"
+      },
+      "models": {
+        "claude-4-5-haiku": {
+          "name": "Claude 4 5 Haiku"
+        },
+        "claude-haiku-4-5": {
+          "name": "Claude Haiku 4 5"
+        },
+        "claude-haiku-4-5-20251001": {
+          "name": "Claude Haiku 4 5 20251001"
+        },
+        "claude-opus-4-5": {
+          "name": "Claude Opus 4 5"
+        },
+        "claude-opus-4-5-20251101": {
+          "name": "Claude Opus 4 5 20251101"
+        },
+        "claude-opus-4-6": {
+          "name": "Claude Opus 4 6"
+        },
+        "claude-opus-4-7": {
+          "name": "Claude Opus 4 7"
+        },
+        "claude-opus-4-8": {
+          "name": "Claude Opus 4 8"
+        },
+        "claude-opus-5": {
+          "name": "Claude Opus 5"
+        },
+        "claude-sonnet-4-5": {
+          "name": "Claude Sonnet 4 5"
+        },
+        "claude-sonnet-4-5-20250929": {
+          "name": "Claude Sonnet 4 5 20250929"
+        },
+        "claude-sonnet-4-6": {
+          "name": "Claude Sonnet 4 6"
+        },
+        "claude-sonnet-5": {
+          "name": "Claude Sonnet 5"
+        },
+        "gemini-2.5-flash": {
+          "name": "Gemini 2.5 Flash"
+        },
+        "gemini-2.5-flash-web-search": {
+          "name": "Gemini 2.5 Flash Web Search"
+        },
+        "gemini-2.5-pro": {
+          "name": "Gemini 2.5 Pro"
+        },
+        "gemini-3-flash": {
+          "name": "Gemini 3 Flash"
+        },
+        "gemini-3-flash-preview": {
+          "name": "Gemini 3 Flash Preview"
+        },
+        "gemini-3.1-flash-lite": {
+          "name": "Gemini 3.1 Flash Lite"
+        },
+        "gemini-3.1-flash-lite-preview": {
+          "name": "Gemini 3.1 Flash Lite Preview"
+        },
+        "gemini-3.1-pro": {
+          "name": "Gemini 3.1 Pro"
+        },
+        "gemini-3.1-pro-preview": {
+          "name": "Gemini 3.1 Pro Preview"
+        },
+        "gemini-3.5-flash": {
+          "name": "Gemini 3.5 Flash"
+        },
+        "gemini-3.5-flash-lite": {
+          "name": "Gemini 3.5 Flash Lite"
+        },
+        "gemini-3.6-flash": {
+          "name": "Gemini 3.6 Flash"
+        },
+        "gemini-3.7-flash": {
+          "name": "Gemini 3.7 Flash"
+        },
+        "gemini-3.8-flash": {
+          "name": "Gemini 3.8 Flash"
+        },
+        "gemini-transcribe": {
+          "name": "Gemini Transcribe"
+        },
+        "gemini-tts": {
+          "name": "Gemini Tts"
+        },
+        "glm-4.7-flash": {
+          "name": "Glm 4.7 Flash"
+        },
+        "gpt-5-mini": {
+          "name": "GPT 5 Mini"
+        },
+        "gpt-5.2": {
+          "name": "GPT 5.2"
+        },
+        "gpt-5.3-chat": {
+          "name": "GPT 5.3 Chat"
+        },
+        "gpt-5.3-codex": {
+          "name": "GPT 5.3 Codex"
+        },
+        "gpt-5.4": {
+          "name": "GPT 5.4"
+        },
+        "gpt-5.4-mantle": {
+          "name": "GPT 5.4 Mantle"
+        },
+        "gpt-5.4-nano": {
+          "name": "GPT 5.4 Nano"
+        },
+        "gpt-5.5": {
+          "name": "GPT 5.5"
+        },
+        "gpt-5.5-mantle": {
+          "name": "GPT 5.5 Mantle"
+        },
+        "gpt-5.5-nano": {
+          "name": "GPT 5.5 Nano"
+        },
+        "gpt-5.6-luna": {
+          "name": "GPT 5.6 Luna"
+        },
+        "gpt-5.6-luna-mantle": {
+          "name": "GPT 5.6 Luna Mantle"
+        },
+        "gpt-5.6-sol": {
+          "name": "GPT 5.6 Sol"
+        },
+        "gpt-5.6-sol-mantle": {
+          "name": "GPT 5.6 Sol Mantle"
+        },
+        "gpt-5.6-terra": {
+          "name": "GPT 5.6 Terra"
+        },
+        "gpt-5.6-terra-mantle": {
+          "name": "GPT 5.6 Terra Mantle"
+        },
+        "gpt-oss-120b": {
+          "name": "GPT OSS 120b"
+        },
+        "grok": {
+          "name": "Grok"
+        },
+        "grok-4.6": {
+          "name": "Grok 4.6"
+        },
+        "grok-fast": {
+          "name": "Grok Fast"
+        },
+        "haip-claude": {
+          "name": "Haip Claude"
+        },
+        "haip-gemini": {
+          "name": "Haip Gemini"
+        },
+        "haip-gpt": {
+          "name": "Haip GPT"
+        },
+        "minimax-m2.5": {
+          "name": "Minimax M2.5"
+        },
+        "qwen3-coder-next": {
+          "name": "Qwen3 Coder Next"
+        }
+      }
+    }
+  },
+  "mcp": {
+    "datadog": {
+      "type": "remote",
+      "url": "https://mcp.datadoghq.com/v1/mcp?referrer_ide=opencode-plugin&plugin_version=0.7.13",
+      "oauth": {}
+    },
+    "glean": {
+      "type": "remote",
+      "url": "{env:GLEAN_MCP_URL}",
+      "oauth": {}
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true
+    },
+    "grep_app": {
+      "type": "remote",
+      "url": "https://mcp.grep.app",
+      "enabled": true
+    }
+  },
+  "default_agent": "smarty",
+  "agent": {
+    "explore": {
+      "model": "litellm/gpt-5.4"
+    },
+    "general": {
+      "model": "litellm/claude-sonnet-4-6"
+    },
+    "smarty": {
+      "model": "litellm/claude-opus-4-8",
+      "mode": "primary",
+      "description": "High-capability agent powered by Claude Opus 4.8. Use for complex reasoning, hard debugging, and architectural decisions."
+    }
+  },
+  "compaction": {
+    "auto": false,
+    "prune": false
+  }
+}
