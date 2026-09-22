@@ -10,7 +10,6 @@ export ZSH="$HOME/.oh-my-zsh"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # export JAVA_HOME=$(asdf where java)
-# export AWS_CONFIG_FILE=~/repos/terraform/util/aws/config-v2
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -82,7 +81,7 @@ plugins=(
 	git
 	tmux
 	kubectl
-        zsh-autosuggestions
+	zsh-autosuggestions
 	terraform
 )
 
@@ -153,17 +152,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Added by Windsurf
-export PATH="/Users/samwestmoreland/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 
-export PATH="$PATH:/Users/samwestmoreland/go/bin"
+export PATH="$PATH:$HOME/go/bin"
 
 # GCP CLI
 export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
 
 source /opt/homebrew/opt/spaceship/spaceship.zsh
 
-# WarpStream
-export PATH="/Users/samwestmoreland/.warpstream:$PATH"
+export PATH="$HOME/.warpstream:$PATH"
 
 # tpack — init plugin manager (binds keys, sources plugins) when inside tmux
 [[ -n "$TMUX" ]] && tpack init &>/dev/null
