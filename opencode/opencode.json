@@ -6,7 +6,7 @@
   },
   "plugin": [
     "opencode-notify",
-    "@cortexkit/opencode-magic-context@0.41.4",
+    "@cortexkit/opencode-magic-context@0.42.6",
     "opencode-mermaid-renderer@0.0.1"
   ],
   "permission": {
@@ -49,6 +49,7 @@
       "npx -y gh-axi pr view *": "allow",
       "npx -y gh-axi release list *": "allow",
       "npx -y gh-axi release view *": "allow",
+      "npx -y gh-axi repo view *": "allow",
       "npx -y gh-axi search *": "allow",
       "pwd *": "allow",
       "sort *": "allow",
