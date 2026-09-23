@@ -31,6 +31,7 @@
       "git fetch *": "allow",
       "git log *": "allow",
       "git pull --ff-only *": "allow",
+      "git remote -v *": "allow",
       "git rev-list *": "allow",
       "git stash apply *": "allow",
       "git stash list *": "allow",
