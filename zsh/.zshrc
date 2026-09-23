@@ -146,8 +146,39 @@ alias vim='nvim'
 alias k='kubectl'
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Loading nvm selects a Node version and costs roughly a second. Load it when a
+# Node command is actually used; nvm then still honours a local .nvmrc.
+_nvm_lazy_load() {
+	unset -f nvm node npm npx corepack
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+
+nvm() {
+	_nvm_lazy_load
+	nvm "$@"
+}
+
+node() {
+	_nvm_lazy_load
+	node "$@"
+}
+
+npm() {
+	_nvm_lazy_load
+	npm "$@"
+}
+
+npx() {
+	_nvm_lazy_load
+	npx "$@"
+}
+
+corepack() {
+	_nvm_lazy_load
+	corepack "$@"
+}
 
 # Added by Windsurf
 export PATH="$HOME/.codeium/windsurf/bin:$PATH"
@@ -160,9 +191,6 @@ export PATH=/opt/homebrew/share/google-cloud-sdk/bin:"$PATH"
 source /opt/homebrew/opt/spaceship/spaceship.zsh
 
 export PATH="$HOME/.warpstream:$PATH"
-
-# tpack — init plugin manager (binds keys, sources plugins) when inside tmux
-[[ -n "$TMUX" ]] && tpack init &>/dev/null
 
 # Continue most recent opencode session
 alias occ='opencode -c'
