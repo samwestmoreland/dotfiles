@@ -24,6 +24,7 @@
       "gh run view *": "allow",
       "gh search issues *": "allow",
       "gh search repos *": "allow",
+      "git add *": "allow",
       "git branch --show-current*": "allow",
       "git checkout *": "allow",
       "git commit -m *": "allow",
@@ -57,7 +58,7 @@
       "tail *": "allow",
       "terraform init *": "allow",
       "terraform state list *": "allow",
-      "terraform validate *": "allow",
+      "terraform * validate *": "allow",
       "wc -l *": "allow",
       "xargs grep *": "allow",
       "rg *": "allow",
@@ -299,11 +300,6 @@
     },
     "general": {
       "model": "litellm/claude-sonnet-4-6"
-    },
-    "smarty": {
-      "model": "litellm/claude-opus-4-8",
-      "mode": "primary",
-      "description": "High-capability agent powered by Claude Opus 4.8. Use for complex reasoning, hard debugging, and architectural decisions."
     }
   },
   "compaction": {
