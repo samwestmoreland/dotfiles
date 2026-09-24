@@ -34,6 +34,7 @@
       "git pull --ff-only *": "allow",
       "git remote -v *": "allow",
       "git rev-list *": "allow",
+      "git show *": "allow",
       "git stash apply *": "allow",
       "git stash list *": "allow",
       "git stash pop *": "allow",
