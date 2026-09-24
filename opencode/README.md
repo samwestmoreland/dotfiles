@@ -1,19 +1,32 @@
-# opencode config
+# OpenCode config
 
-`opencode.json` is my [opencode](https://opencode.ai) configuration.
+This directory contains the parts of my [OpenCode](https://opencode.ai)
+configuration that should travel between machines: the base config, agents, skills,
+and commands. Plugins, credentials, package installs, and UI state stay local.
 
 ## Setup
 
-Symlink (or copy) it into place:
+Run these commands from this directory:
 
 ```sh
+mkdir -p ~/.config/opencode
 ln -s "$PWD/opencode.json" ~/.config/opencode/opencode.json
+ln -s "$PWD/agents" ~/.config/opencode/agents
+ln -s "$PWD/skills" ~/.config/opencode/skills
+ln -s "$PWD/command" ~/.config/opencode/command
 ```
+
+If a destination already exists, merge or remove it before creating that symlink.
+Leave the rest of `~/.config/opencode` as a real directory so OpenCode and its
+plugins can keep their machine-local state there.
+
+The config includes inline `explore` and `general` agents. The primary `smarty`
+agent and specialist agents are file-backed under `agents/`.
 
 ## Required environment variables
 
-Secrets and internal hostnames are pulled out of the committed file via
-`{env:...}` interpolation. Set these in your shell rc (not committed):
+The committed config uses `{env:...}` interpolation for secrets and internal
+hostnames. Set these in your shell rc, rather than committing them:
 
 | Variable            | Purpose                                          |
 | ------------------- | ------------------------------------------------ |
