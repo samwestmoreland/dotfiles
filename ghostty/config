@@ -1,2 +1,7 @@
 # Shared Ghostty preferences.
 font-size = 10
+
+shell-integration-features = no-cursor, path
+cursor-style = block
+
+macos-non-native-fullscreen = true
