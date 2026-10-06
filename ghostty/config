@@ -1,7 +1,15 @@
 # Shared Ghostty preferences.
+font-family = JetBrainsMono Nerd Font Mono
 font-size = 10
+font-thicken = true
+# font-thicken-strength = 180
 
-shell-integration-features = no-cursor, path
+shell-integration-features = no-cursor,path
 cursor-style = block
 
 macos-non-native-fullscreen = true
+
+# Use Option as Meta for word-wise Zsh/readline editing.
+keybind = alt+left=esc:b
+keybind = alt+right=esc:f
+keybind = alt+backspace=text:\x1b\x7f
